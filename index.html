@@ -1,60 +1,615 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Under Construction</title>
-  <meta name="description" content="Please check back soon." />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <title>Scott Gardner for Judge</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <style>
     :root {
-      color-scheme: light;
+      --cream: #ebe6d8;
+      --navy: #0e3451;
+      --navy-ink: #19334d;
+      --gold: #A71C1C;
+      --forest: #0c260e;
+      --text-dark: #24394f;
+      --text-light: #f3f7f4;
+      --max: 1320px;
     }
+
     * { box-sizing: border-box; }
-    body {
+
+    html, body {
       margin: 0;
-      min-height: 100vh;
+      padding: 0;
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    img { max-width: 100%; display: block; }
+    figure { margin: 0; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), 100% - 3rem);
+      margin: 0 auto;
+    }
+
+    .contact-link,
+    .contact-item {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .hero {
+      position: relative;
+      min-height: clamp(448px, 74vh, 784px);
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      background: #1a2f1f;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(9, 30, 17, 0.2) 0%, rgba(9, 30, 17, 0.45) 45%, rgba(9, 30, 17, 0.68) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), 100% - 3rem);
+      margin: 0 auto;
       display: grid;
-      place-items: center;
-      font-family: "Georgia", "Times New Roman", serif;
-      background: radial-gradient(1200px 800px at 20% 20%, #ffffff, #f5f5f5 60%, #eeeeee 100%);
-      color: #2b2117;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      padding-top: 52px;
+      padding-bottom: 32px;
+      color: #fff;
     }
-    .card {
-      padding: 3.5rem 3rem;
-      border: 1px solid rgba(43, 33, 23, 0.15);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 12px 40px rgba(43, 33, 23, 0.12);
-      max-width: 640px;
-      text-align: center;
-      backdrop-filter: blur(6px);
+
+    .hero-right {
+      justify-self: end;
+      text-align: left;
+      max-width: min(620px, calc(100vw - 4.5rem));
+      padding-right: 12px;
     }
-    h1 {
-      margin: 0 0 0.75rem;
-      font-size: clamp(2rem, 4vw, 3.25rem);
+
+    @media (min-width: 1321px) {
+      .hero-right {
+        transform: translateX(min(28px, calc((100vw - 1320px) / 4)));
+      }
+    }
+
+    .hero-lines {
+      margin: 0;
+      text-transform: uppercase;
+      font: 900 clamp(2.2rem, 6vw, 7rem)/0.95 "Arial Black", Impact, sans-serif;
+      letter-spacing: 0.01em;
+      text-shadow: 0 6px 26px rgba(0, 0, 0, 0.26);
+    }
+
+    .ribbon {
+      background: var(--gold);
+      color: #fff;
+      overflow: hidden;
+      border-top: 3px solid #A71C1C;
+      border-bottom: 3px solid #A71C1C;
+    }
+
+    .ribbon-track {
+      white-space: nowrap;
+      display: inline-block;
+      text-transform: uppercase;
+      font: 900 clamp(2.18rem, 4.06vw, 6.24rem)/1 "Arial Black", Impact, sans-serif;
       letter-spacing: 0.02em;
+      padding: 0.94rem 0;
+      will-change: transform;
+      animation: ribbonTicker 20s linear infinite;
+    }
+
+    .ribbon-track span { margin-right: 3.2rem; }
+
+    @keyframes ribbonTicker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .section-cream {
+      background: var(--cream);
+      padding: clamp(3rem, 8vw, 6rem) 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      grid-template-areas: "about-text about-portrait";
+      gap: clamp(1.6rem, 3.7vw, 4rem);
+      align-items: start;
+    }
+
+    .about-text {
+      grid-area: about-text;
+      max-width: 44rem;
+      padding-top: clamp(0.6rem, 1.6vw, 1.8rem);
+    }
+
+    .about-text .section-title {
+      letter-spacing: 0;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-title {
+      margin: 0 0 1rem;
+      font: 900 clamp(2rem, 4.2vw, 4.4rem)/1 "Arial Black", Impact, sans-serif;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+
+    .about-text p,
+    .community-text p,
+    .priorities p {
+      margin: 0 0 1rem;
+      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
+      color: #4f6378;
+      max-width: 62ch;
+    }
+
+    .about-text p {
+      max-width: 48ch;
+      line-height: 1.4;
+      margin-bottom: 1.2rem;
+    }
+
+    .portrait-wrap {
+      grid-area: about-portrait;
+      justify-self: center;
+      width: min(500px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(9, 20, 32, 0.22);
+      background: #d8d2c6;
+    }
+
+    .portrait-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 16%;
+    }
+
+    .section-dark {
+      background: #A71C1C;
+      color: var(--text-light);
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: minmax(420px, 1.1fr) minmax(360px, 1fr);
+      gap: clamp(1rem, 2.4vw, 2.5rem);
+      align-items: center;
+      width: min(1500px, 100% - 3rem);
+      margin: 0 auto;
+    }
+
+    .family-photo {
+      position: relative;
+      overflow: hidden;
+      min-height: 0;
+      justify-self: center;
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+    }
+
+    .family-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    @media (min-width: 1101px) {
+      .section-dark {
+        padding: 0;
+      }
+
+      .community-grid {
+        grid-template-columns: 705px 560px;
+        gap: 0;
+        align-items: stretch;
+        justify-content: center;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+
+      .family-photo {
+        width: 705px;
+        max-width: 705px;
+        height: 469px;
+        justify-self: start;
+        align-self: stretch;
+      }
+
+      .family-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .community-text {
+        width: 560px;
+        max-width: 560px;
+        min-height: 469px;
+        padding: 1.5rem 2.2rem;
+        justify-self: center;
+      }
+
+      .community-text p {
+        font-size: 1.05rem;
+        line-height: 1.45;
+      }
+
+      .family-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, #A71C1C 0%, rgba(167, 28, 28, 0) 16%),
+          linear-gradient(270deg, #A71C1C 0%, rgba(167, 28, 28, 0) 16%);
+      }
+    }
+
+    .community-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1rem, 2.8vw, 2.6rem) clamp(1rem, 4.3vw, 4.2rem);
+    }
+
+    .community-text p {
+      color: #eff5ef;
+      max-width: 42ch;
+    }
+
+    .priorities {
+      padding: clamp(2.7rem, 7vw, 5.4rem) 0;
+    }
+
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .priority-card {
+      background: #fff;
+      border: 1px solid #d9d2c2;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .priority-card h3 {
+      margin: 0 0 0.55rem;
+      text-transform: uppercase;
+      font: 800 1.05rem/1.1 Arial, sans-serif;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+    }
+
+    .contact-block {
+      background: #fff;
+      border: 1px solid #d9d2c2;
+      border-radius: 4px;
+      padding: clamp(1rem, 2vw, 1.5rem);
+      margin-top: 0.8rem;
+      display: grid;
+      gap: 0.65rem;
+      max-width: 700px;
+    }
+
+    .contact-link {
+      font: 700 0.95rem/1 Arial, sans-serif;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    p {
-      margin: 0 0 1.5rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
+
+    .contact-item {
+      border: 1px solid #d4cdbf;
+      border-radius: 3px;
+      padding: 0.65rem 0.8rem;
+      gap: 0.65rem;
+      font: 700 0.9rem/1 Arial, sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
-    .rule {
-      width: 120px;
-      height: 2px;
-      background: #2b2117;
-      margin: 1.5rem auto 0;
-      opacity: 0.6;
+
+    .contact-item:hover { background: #f8f5ef; }
+
+    .contact-item:focus-visible,
+    .contact-link:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      color: var(--navy);
+      flex: 0 0 auto;
+    }
+
+    footer {
+      background: var(--cream);
+      border-top: 1px solid #d6cebc;
+      padding: 1rem 0 2rem;
+      font: 600 0.9rem/1.4 Arial, sans-serif;
+      color: #4b5e73;
+    }
+
+    @media (max-width: 1100px) {
+      .community-grid {
+        grid-template-columns: 1fr;
+        width: min(900px, 100% - 1.5rem);
+        margin-inline: auto;
+        justify-items: stretch;
+      }
+
+      .community-grid {
+        gap: 1rem;
+      }
+
+      .community-text {
+        padding: 0.75rem 0 1.5rem;
+        width: 100%;
+        margin-inline: 0;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .community-text p {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .family-photo {
+        width: 100%;
+        margin-inline: 0;
+        aspect-ratio: auto;
+      }
+
+      .family-photo img {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .hero-right {
+        justify-self: end;
+        margin-top: 0;
+      }
+
+    }
+
+    @media (max-width: 920px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 42vw);
+        gap: clamp(0.9rem, 2vw, 1.5rem);
+      }
+
+      .about-text {
+        max-width: none;
+        padding-top: 0.2rem;
+      }
+
+      .about-text p {
+        max-width: 40ch;
+      }
+
+      .portrait-wrap {
+        width: min(42vw, 360px);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .container,
+      .hero-content { width: min(var(--max), 100% - 2rem); }
+
+      .priority-grid { grid-template-columns: 1fr; }
+
+      .hero { min-height: 432px; }
+
+      .hero-bg { object-position: 34% 18%; }
+
+      .hero-content { padding-top: 44px; }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        justify-self: center;
+        text-align: center;
+      }
+
+      .hero-lines { font-size: clamp(2rem, 12vw, 4.2rem); }
+
+      .section-title { font-size: clamp(1.8rem, 10vw, 3.2rem); }
+    }
+
+    @media (max-width: 620px) {
+      #about.section-cream {
+        padding-top: 1.4rem;
+        padding-bottom: 2.4rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "about-portrait"
+          "about-text";
+        gap: 0.9rem;
+      }
+
+      .portrait-wrap {
+        width: min(100%, 460px);
+      }
+
+      .about-text {
+        padding-top: 0;
+        width: min(100%, 460px);
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      .about-text .section-title {
+        margin-bottom: 0.65rem;
+      }
+
+      .about-text p {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .community-text {
+        padding: 0.75rem 0 1.5rem;
+        width: 100%;
+        margin-inline: 0;
+      }
+
+      .community-text p {
+        max-width: none;
+      }
+
+      .family-photo {
+        width: 100%;
+        margin-inline: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .ribbon-track { animation: none; }
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Under Construction</h1>
-    <p>We’re building something new here. Please check back soon.</p>
-    <div class="rule" aria-hidden="true"></div>
+  <main>
+    <section class="hero" aria-labelledby="hero-lines">
+      <img class="hero-bg" src="images/scott_group.jpg" width="2600" height="1730" alt="Scott Gardner with supporters outdoors." fetchpriority="high" decoding="async" />
+      <div class="hero-content">
+        <div></div>
+        <div class="hero-right">
+          <h1 class="hero-lines" id="hero-lines">Experience.<br />Fairness.<br />Dedication.</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="ribbon" aria-label="Campaign announcement">
+      <div class="ribbon-track" aria-hidden="true">
+        <span>&bull; Election Day is November 3, 2026 &bull;</span>
+        <span>&bull; Election Day is November 3, 2026 &bull;</span>
+        <span>&bull; Election Day is November 3, 2026 &bull;</span>
+        <span>&bull; Election Day is November 3, 2026 &bull;</span>
+      </div>
+    </section>
+
+    <section id="about" class="section-cream" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2 class="section-title" id="about-title">Scott Gardner</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh praesent tristique magna sit amet purus gravida quis.</p>
+          <p>Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras.</p>
+          <p>Eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis.</p>
+        </div>
+        <figure class="portrait-wrap">
+          <img src="images/scott_solo.jpg" width="1151" height="1730" alt="Portrait of Scott Gardner." loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="community" class="section-dark" aria-label="Community">
+      <div class="container community-grid">
+        <figure class="family-photo">
+          <img src="images/scott_family.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
+        </figure>
+        <div class="community-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat.</p>
+          <p>Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. In hendrerit gravida rutrum quisque non tellus orci.</p>
+          <p>Diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="priorities" class="section-cream priorities" aria-labelledby="priorities-title">
+      <div class="container">
+        <h2 class="section-title" id="priorities-title">Priorities</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+        <div class="priority-grid">
+          <article class="priority-card">
+            <h3>Lorem I</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </article>
+          <article class="priority-card">
+            <h3>Lorem II</h3>
+            <p>Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin.</p>
+          </article>
+          <article class="priority-card">
+            <h3>Lorem III</h3>
+            <p>Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi leo urna molestie at elementum eu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-cream" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Get in Touch with Scott</h2>
+        <p style="font:500 1.1rem/1.5 Arial, sans-serif; color:#4f6378; margin:0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius vel pharetra vel turpis nunc eget lorem dolor sed viverra.</p>
+        <div class="contact-block">
+          <!-- TODO: Replace # with campaign Facebook page URL and add target="_blank" rel="noopener noreferrer". -->
+          <a class="contact-item" href="#" aria-label="Find us on Facebook">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.4 8H16V5.2C15.72 5.16 14.75 5.08 13.62 5.08C11.25 5.08 9.62 6.53 9.62 9.2V11.67H7V14.8H9.62V22H12.8V14.8H15.3L15.7 11.67H12.8V9.5C12.8 8.6 13.04 8 14.4 8Z"/></svg>
+            <span>Find us on Facebook</span>
+          </a>
+          <a class="contact-item" href="mailto:scott@judgescottgardner.com" aria-label="Email scott@judgescottgardner.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25v13.5A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V5.25Zm2.31.75 6.69 5.02L18.69 6H5.31Zm13.44 2.1-6.3 4.73a.75.75 0 0 1-.9 0L5.25 8.1v10.65c0 .41.34.75.75.75h12c.41 0 .75-.34.75-.75V8.1Z"/></svg>
+            <span>scott@judgescottgardner.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
