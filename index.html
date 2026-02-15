@@ -94,41 +94,15 @@
       justify-self: end;
       text-align: left;
       max-width: min(620px, calc(100vw - 5rem));
-      padding-right: 2.5rem;
+      padding-right: 1.25rem;
     }
 
     .hero-lines {
       margin: 0;
       text-transform: uppercase;
-      font: 900 clamp(2.2rem, 6vw, 7rem)/0.95 "Arial Black", Impact, sans-serif;
+      font: 900 clamp(1rem, 4vw, 5rem)/0.95 "Arial Black", Impact, sans-serif;
       letter-spacing: 0.01em;
       text-shadow: 0 6px 26px rgba(0, 0, 0, 0.26);
-    }
-
-    .ribbon {
-      background: var(--gold);
-      color: #fff;
-      overflow: hidden;
-      border-top: 3px solid #A71C1C;
-      border-bottom: 3px solid #A71C1C;
-    }
-
-    .ribbon-track {
-      white-space: nowrap;
-      display: inline-block;
-      text-transform: uppercase;
-      font: 900 clamp(2.18rem, 4.06vw, 6.24rem)/1 "Arial Black", Impact, sans-serif;
-      letter-spacing: 0.02em;
-      padding: 0.94rem 0;
-      will-change: transform;
-      animation: ribbonTicker 20s linear infinite;
-    }
-
-    .ribbon-track span { margin-right: 3.2rem; }
-
-    @keyframes ribbonTicker {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
     }
 
     .section-cream {
@@ -163,8 +137,7 @@
     }
 
     .about-text p,
-    .community-text p,
-    .priorities p {
+    .community-text p {
       margin: 0 0 1rem;
       font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
       color: #4f6378;
@@ -196,7 +169,9 @@
     }
 
     .section-dark {
-      background: #A71C1C;
+      --section-bg: #A71C1C;
+      --section-bg-rgb: 167, 28, 28;
+      background: var(--section-bg);
       color: var(--text-light);
       padding: clamp(2rem, 5vw, 4.5rem) 0;
     }
@@ -228,13 +203,13 @@
     }
 
     @media (min-width: 1101px) {
-      .section-dark {
+      .feature-section.section-dark {
         padding: 0;
       }
 
-      .community-grid {
-        grid-template-columns: 705px 560px;
-        gap: 0;
+      .feature-section .community-grid {
+        grid-template-columns: 705px minmax(560px, 1fr);
+        gap: clamp(0.8rem, 2vw, 2rem);
         align-items: stretch;
         justify-content: center;
         width: 100%;
@@ -242,7 +217,7 @@
         margin: 0;
       }
 
-      .family-photo {
+      .feature-section .family-photo {
         width: 705px;
         max-width: 705px;
         height: 469px;
@@ -250,34 +225,66 @@
         align-self: stretch;
       }
 
-      .family-photo img {
+      .feature-section .family-photo img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center center;
       }
 
-      .community-text {
-        width: 560px;
-        max-width: 560px;
+      .feature-section .community-text {
+        width: 100%;
+        max-width: none;
         min-height: 469px;
         padding: 1.5rem 2.2rem;
         justify-self: center;
       }
 
-      .community-text p {
+      #community .community-text p {
         font-size: 1.05rem;
         line-height: 1.45;
       }
 
-      .family-photo::after {
+      #community .community-list {
+        font-size: 1.05rem;
+        line-height: 1.45;
+      }
+
+      .feature-section .family-photo::after {
         content: "";
         position: absolute;
         inset: 0;
         pointer-events: none;
         background:
-          linear-gradient(90deg, #A71C1C 0%, rgba(167, 28, 28, 0) 16%),
-          linear-gradient(270deg, #A71C1C 0%, rgba(167, 28, 28, 0) 16%);
+          linear-gradient(90deg, var(--section-bg) 0%, rgba(var(--section-bg-rgb), 0) 16%),
+          linear-gradient(270deg, var(--section-bg) 0%, rgba(var(--section-bg-rgb), 0) 16%);
+      }
+
+      #community-2 .community-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 48vw);
+        grid-template-areas: "text photo";
+      }
+
+      #community-2 .community-text {
+        grid-area: text;
+        justify-self: stretch;
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        padding-right: 2.2rem;
+        align-items: flex-start;
+      }
+
+      #community-2 .family-photo {
+        grid-area: photo;
+        justify-self: end;
+        width: 100%;
+        max-width: 705px;
+      }
+
+      #community-2 .community-title,
+      #community-2 .community-text p {
+        width: 100%;
       }
     }
 
@@ -288,35 +295,32 @@
       padding: clamp(1rem, 2.8vw, 2.6rem) clamp(1rem, 4.3vw, 4.2rem);
     }
 
-    .community-text p {
-      color: #eff5ef;
-      max-width: 42ch;
-    }
-
-    .priorities {
-      padding: clamp(2.7rem, 7vw, 5.4rem) 0;
-    }
-
-    .priority-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .priority-card {
-      background: #fff;
-      border: 1px solid #d9d2c2;
-      padding: 1rem;
-      border-radius: 4px;
-    }
-
-    .priority-card h3 {
-      margin: 0 0 0.55rem;
+    .community-title {
+      margin: 0 0 0.8rem;
       text-transform: uppercase;
-      font: 800 1.05rem/1.1 Arial, sans-serif;
-      color: var(--navy);
-      letter-spacing: 0.08em;
+      font: 900 clamp(1.4rem, 3.6vw, 2.8rem)/1.05 "Arial Black", Impact, sans-serif;
+      letter-spacing: 0.02em;
+      color: #fff;
+    }
+
+    .community-text p,
+    .community-list {
+      color: #eff5ef;
+      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
+    }
+
+    .community-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .community-list li {
+      margin-bottom: 0.7rem;
+      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.4 Arial, sans-serif;
+    }
+
+    .community-list li:last-child {
+      margin-bottom: 0;
     }
 
     .contact-block {
@@ -389,7 +393,8 @@
         text-align: left;
       }
 
-      .community-text p {
+      .community-text p,
+      .community-list {
         max-width: none;
         margin-left: 0;
         margin-right: 0;
@@ -439,8 +444,6 @@
       .container,
       .hero-content { width: min(var(--max), 100% - 2rem); }
 
-      .priority-grid { grid-template-columns: 1fr; }
-
       .hero { min-height: 432px; }
 
       .hero-bg { object-position: 34% 18%; }
@@ -456,7 +459,7 @@
         text-align: center;
       }
 
-      .hero-lines { font-size: clamp(2rem, 12vw, 4.2rem); }
+      .hero-lines { font-size: clamp(1rem, 8vw, 3rem); }
 
       .section-title { font-size: clamp(1.8rem, 10vw, 3.2rem); }
     }
@@ -502,7 +505,8 @@
         margin-inline: 0;
       }
 
-      .community-text p {
+      .community-text p,
+      .community-list {
         max-width: none;
       }
 
@@ -514,28 +518,18 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .ribbon-track { animation: none; }
     }
   </style>
 </head>
 <body>
   <main>
     <section class="hero" aria-labelledby="hero-lines">
-      <img class="hero-bg" src="images/scott_group.jpg" width="2600" height="1730" alt="Scott Gardner with supporters outdoors." fetchpriority="high" decoding="async" />
+      <img class="hero-bg" src="images/scott_hero_horizontal.jpg" width="2600" height="1730" alt="Scott Gardner with supporters outdoors." fetchpriority="high" decoding="async" />
       <div class="hero-content">
         <div></div>
         <div class="hero-right">
-          <h1 class="hero-lines" id="hero-lines">Experience.<br />Fairness.<br />Dedication.</h1>
+          <h1 class="hero-lines" id="hero-lines">Protecting our rights, our children and families, and our community.</h1>
         </div>
-      </div>
-    </section>
-
-    <section class="ribbon" aria-label="Campaign announcement">
-      <div class="ribbon-track" aria-hidden="true">
-        <span>&bull; Election Day is November 3, 2026 &bull;</span>
-        <span>&bull; Election Day is November 3, 2026 &bull;</span>
-        <span>&bull; Election Day is November 3, 2026 &bull;</span>
-        <span>&bull; Election Day is November 3, 2026 &bull;</span>
       </div>
     </section>
 
@@ -543,46 +537,54 @@
       <div class="container about-grid">
         <div class="about-text">
           <h2 class="section-title" id="about-title">Scott Gardner</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh praesent tristique magna sit amet purus gravida quis.</p>
-          <p>Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras.</p>
-          <p>Eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis.</p>
+          <p>Serving as a judge is the honor of a lifetime.<br><br>
+          Each day I start well before the sun comes up with a prayer for wisdom. A judge has to discern
+          between a violent predator, and someone who is simply struggling with poverty or mental health
+          challenges.<br><br>
+          It is humbling work, which I thrive on. At two in the morning, I may get phone calls from social
+          workers and law-enforcement in the field, and we must decide whether to remove children from awful
+          homes. At five in the afternoon, I may sentence a drug dealer, a child molester, or a murderer. It is not
+          work for the faint of heart. It is not work you do without vast experience.
+          <br>It is not work that you leave at the office.<br><br>
+          I am proud of the innovative work we have done. Our family preservation court is a model for the rest
+          of the state. Our best for baby program has saved children, and created better outcomes for their
+          parents. My unmatched experience, over 500 jury trials, ensures the public safety that all of us
+          treasure in St Tammany and Washington Parish.<br><br>
+          I am guided in this work by my faith. I ask for your support and your prayers as I continue this work
+          as your Judge in Division G.</p>
         </div>
         <figure class="portrait-wrap">
-          <img src="images/scott_solo.jpg" width="1151" height="1730" alt="Portrait of Scott Gardner." loading="lazy" decoding="async" />
+          <img src="images/scott_judge.jpg" width="1151" height="1730" alt="Portrait of Scott Gardner." loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
 
-    <section id="community" class="section-dark" aria-label="Community">
+    <section id="community" class="section-dark feature-section" aria-labelledby="faith-action-title">
+      <div class="container community-grid">
+        <figure class="family-photo">
+          <img src="images/scott_faithInAction.jpg" width="2600" height="1730" alt="Scott Gardner in choir." loading="lazy" decoding="async" />
+        </figure>
+        <div class="community-text">
+          <h2 class="community-title" id="faith-action-title">A Lifetime of Faith in Action.</h2>
+          <ul class="community-list">
+            <li>Service to community is central to his life and he is committed to strengthening the quality of life on the Northshore.</li>
+            <li>Scott and his family are active members of Christ Episcopal Church.</li>
+            <li>He led children's and youth ministries.</li>
+            <li>He has been a faculty member of the Christ Episcopal Enrichment Program.</li>
+            <li>He was a Children's Choir director and Community Choir member.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="community-2" class="section-dark feature-section" style="--section-bg: #141D3A; --section-bg-rgb: 20, 29, 58;" aria-labelledby="faith-action-title-2">
       <div class="container community-grid">
         <figure class="family-photo">
           <img src="images/scott_family.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
         </figure>
         <div class="community-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat.</p>
-          <p>Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. In hendrerit gravida rutrum quisque non tellus orci.</p>
-          <p>Diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="priorities" class="section-cream priorities" aria-labelledby="priorities-title">
-      <div class="container">
-        <h2 class="section-title" id="priorities-title">Priorities</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
-        <div class="priority-grid">
-          <article class="priority-card">
-            <h3>Lorem I</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </article>
-          <article class="priority-card">
-            <h3>Lorem II</h3>
-            <p>Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin.</p>
-          </article>
-          <article class="priority-card">
-            <h3>Lorem III</h3>
-            <p>Et malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi leo urna molestie at elementum eu.</p>
-          </article>
+          <h2 class="community-title" id="faith-action-title-2">Family and Beyond.</h2>
+          <p>Scott has been married to Reina for 38 years. She was a kindergarten teacher and Principal of the Early Childhood Campus at Christ Episcopal School. She currently serves as the Executive Director of the 22nd Judicial District Court Bar Association. Reina is a Court Appointed Special Advocate and CASA of the Year. They have two sons; JD works in Silicon Valley, and Sean teaches high school physics.<br><br>They are certified foster parents.</p>
         </div>
       </div>
     </section>
