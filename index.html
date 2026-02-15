@@ -59,15 +59,6 @@
       background: #1a2f1f;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(9, 30, 17, 0.2) 0%, rgba(9, 30, 17, 0.45) 45%, rgba(9, 30, 17, 0.68) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -147,7 +138,7 @@
     .about-text p,
     .community-text p {
       margin: 0 0 1rem;
-      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
+      font: 500 clamp(1.3125rem, 1.75vw, 2.1875rem)/1.45 Arial, sans-serif;
       color: #4f6378;
       max-width: 62ch;
     }
@@ -294,13 +285,13 @@
 
       #faith-service .community-text p,
       #prosecution .community-text p {
-        font-size: 1.05rem;
+        font-size: 1.3125rem;
         line-height: 1.45;
       }
 
       #faith-service .community-list,
       #prosecution .community-list {
-        font-size: 1.05rem;
+        font-size: 1.3125rem;
         line-height: 1.45;
       }
 
@@ -380,7 +371,7 @@
     .community-text p,
     .community-list {
       color: #eff5ef;
-      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
+      font: 500 clamp(1.3125rem, 1.75vw, 2.1875rem)/1.45 Arial, sans-serif;
     }
 
     .community-list {
@@ -390,7 +381,7 @@
 
     .community-list li {
       margin-bottom: 0.7rem;
-      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.4 Arial, sans-serif;
+      font: 500 clamp(1.3125rem, 1.75vw, 2.1875rem)/1.4 Arial, sans-serif;
     }
 
     .community-list li:last-child {
@@ -423,7 +414,7 @@
     }
 
     .contact-label {
-      font: 700 0.9rem/1 Arial, sans-serif;
+      font: 700 1.125rem/1 Arial, sans-serif;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--navy);
@@ -435,7 +426,7 @@
       border: 1px solid #d4cdbf;
       border-radius: 3px;
       padding: 0.7rem 0.75rem;
-      font: 500 1rem/1.4 Arial, sans-serif;
+      font: 500 1.25rem/1.4 Arial, sans-serif;
       color: var(--text-dark);
       background: #fff;
     }
@@ -458,7 +449,7 @@
       border-radius: 3px;
       background: var(--navy);
       color: #fff;
-      font: 700 0.92rem/1 Arial, sans-serif;
+      font: 700 1.15rem/1 Arial, sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 0.8rem 1rem;
@@ -476,7 +467,7 @@
 
     .contact-status {
       margin: 0.1rem 0 0;
-      font: 600 0.92rem/1.35 Arial, sans-serif;
+      font: 600 1.15rem/1.35 Arial, sans-serif;
       min-height: 1.25em;
     }
 
@@ -540,7 +531,7 @@
 
     .intro-list li {
       margin-bottom: 0.7rem;
-      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
+      font: 500 clamp(1.3125rem, 1.75vw, 2.1875rem)/1.45 Arial, sans-serif;
     }
 
     .intro-list li:last-child {
@@ -548,7 +539,7 @@
     }
 
     .contact-link {
-      font: 700 0.95rem/1 Arial, sans-serif;
+      font: 700 1.1875rem/1 Arial, sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -611,7 +602,7 @@
       border-radius: 3px;
       padding: 0.8rem 1rem;
       gap: 0.65rem;
-      font: 700 0.92rem/1 Arial, sans-serif;
+      font: 700 1.15rem/1 Arial, sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       background: var(--navy);
@@ -837,7 +828,7 @@
           <h2 class="section-title" id="bio-title">Judge Scott Gardner, a lifetime of service to our children, our families, and our community.</h2>
           <ul class="intro-list">
             <li>He presides over criminal, civil, domestic violence, and children's dockets</li>
-            <li>He has personally handled over 500 jury trials</li>
+            <li>He has personally handled over <b>500 jury trials</b></li>
             <li>He is the CASA <b>Judge of the Year</b></li>
             <li>He is a Children's Advocacy Center <b>Champion of Children</b></li>
             <li>He is the recipient of the prestigious <b>Pearl Williams Leadership Award</b></li>
@@ -852,7 +843,7 @@
           </ul>
         </div>
         <figure class="portrait-wrap">
-          <img src="images/scott_library.jpg" width="1151" height="1730" alt="Scott Gardner library portrait." loading="lazy" decoding="async" />
+          <img src="images/scott_judge.jpg" width="1151" height="1730" alt="Scott Gardner library portrait." loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -919,7 +910,9 @@
         </figure>
         <div class="community-text">
           <h2 class="community-title" id="faith-action-title-2">Family and Beyond.</h2>
-          <p>Scott has been married to Reina for 38 years. She was a kindergarten teacher and Principal of the Early Childhood Campus at Christ Episcopal School. She currently serves as the Executive Director of the 22nd Judicial District Court Bar Association. Reina is a Court Appointed Special Advocate and CASA of the Year. They have two sons; JD works in Silicon Valley, and Sean teaches high school physics.<br><br>They are certified foster parents.</p>
+          <p>Scott has been married to Reina for 38 years. She was a kindergarten teacher and Principal of the Early Childhood Campus at Christ Episcopal School. 
+            She currently serves as the Executive Director of the 22nd Judicial District Court Bar Association. Reina is a Court Appointed Special Advocate and CASA of the Year. 
+            They have two sons; JD is a computer programmer, and Sean teaches high school physics.<br><br>They are certified foster parents.</p>
         </div>
       </div>
     </section>
@@ -927,7 +920,7 @@
     <section id="about" class="section-cream" aria-labelledby="about-title">
       <div class="container about-grid">
         <div class="about-text">
-          <p>Serving as a judge is the honor of a lifetime.<br><br>
+          <p><b>Serving as a judge is the honor of a lifetime.</b><br><br>
           Each day I start well before the sun comes up with a prayer for wisdom. A judge has to discern
           between a violent predator, and someone who is simply struggling with poverty or mental health
           challenges.<br><br>
@@ -935,16 +928,16 @@
           workers and law-enforcement in the field, and we must decide whether to remove children from awful
           homes. At five in the afternoon, I may sentence a drug dealer, a child molester, or a murderer. It is not
           work for the faint of heart. It is not work you do without vast experience.
-          <br>It is not work that you leave at the office.<br><br>
+          <br><br><b>It is not work that you leave at the office.</b><br><br>
           I am proud of the innovative work we have done. Our family preservation court is a model for the rest
           of the state. Our best for baby program has saved children, and created better outcomes for their
           parents. My unmatched experience, over 500 jury trials, ensures the public safety that all of us
           treasure in St Tammany and Washington Parish.<br><br>
-          I am guided in this work by my faith. I ask for your support and your prayers as I continue this work
-          as your Judge in Division G.</p>
+          <b>I am guided in this work by my faith. I ask for your support and your prayers as I continue this work
+          as your Judge in Division G.</b></p>
         </div>
         <figure class="portrait-wrap">
-          <img src="images/scott_judge.jpg" width="1151" height="1730" alt="Scott Gardner judicial portrait." loading="lazy" decoding="async" />
+          <img src="images/scott_library.jpg" width="1151" height="1730" alt="Scott Gardner judicial portrait." loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -952,7 +945,7 @@
     <section id="contact" class="section-cream" aria-labelledby="contact-title">
       <div class="container">
         <h2 class="section-title" id="contact-title">Get in touch with Scott</h2>
-        <p style="font:500 1.1rem/1.5 Arial, sans-serif; color:#4f6378; margin:0;">Send a message and our team will follow up as soon as possible.</p>
+        <p style="font:500 1.375rem/1.5 Arial, sans-serif; color:#4f6378; margin:0;">Send a message and our team will follow up as soon as possible.</p>
         <div class="contact-block">
           <form class="contact-form" action="https://formspree.io/f/meelgdvb" method="POST">
             <label class="contact-label" for="contact-email">Your email</label>
@@ -1026,4 +1019,7 @@
   </script>
 </body>
 </html>
+
+
+
 
