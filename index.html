@@ -21,6 +21,7 @@
       --text-dark: #24394f;
       --text-light: #f3f7f4;
       --max: 1320px;
+      --content-pad-inline: clamp(1rem, 4vw, 5rem);
     }
 
     * { box-sizing: border-box; }
@@ -120,7 +121,7 @@
     .about-text {
       grid-area: about-text;
       max-width: none;
-      padding: clamp(1rem, 2.8vw, 2.6rem) clamp(1rem, 4.3vw, 4.2rem);
+      padding: clamp(1rem, 2.8vw, 2.6rem) var(--content-pad-inline);
     }
 
     .about-text .section-title {
@@ -147,6 +148,12 @@
       max-width: none;
       line-height: 1.45;
       margin-bottom: 1rem;
+    }
+
+    #about .about-signature {
+      width: min(280px, 60%);
+      height: auto;
+      margin-top: 0.75rem;
     }
 
     .portrait-wrap {
@@ -222,7 +229,7 @@
 
       #about .about-text,
       #bio .about-text {
-        padding: 1.5rem 2.2rem;
+        padding: 1.5rem var(--content-pad-inline);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -279,7 +286,7 @@
         width: 100%;
         max-width: none;
         min-height: 469px;
-        padding: 1.5rem 2.2rem;
+        padding: 1.5rem var(--content-pad-inline);
         justify-self: center;
       }
 
@@ -293,6 +300,37 @@
       #prosecution .community-list {
         font-size: 1.3125rem;
         line-height: 1.45;
+      }
+
+      #faith-service .community-grid,
+      #prosecution .community-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #faith-service .community-text,
+      #prosecution .community-text {
+        min-height: auto;
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.5rem var(--content-pad-inline);
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      #faith-service .community-title,
+      #prosecution .community-title {
+        font-size: clamp(2rem, 4vw, 3.6rem);
+        width: 100%;
+      }
+
+      #faith-service .community-text p,
+      #prosecution .community-text p,
+      #faith-service .community-list,
+      #prosecution .community-list {
+        width: 100%;
+        max-width: none;
       }
 
       .feature-section .family-photo::after {
@@ -318,7 +356,7 @@
         width: 100%;
         max-width: none;
         margin-left: 0;
-        padding-right: 2.2rem;
+        padding-right: var(--content-pad-inline);
         align-items: flex-start;
       }
 
@@ -357,7 +395,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(1rem, 2.8vw, 2.6rem) clamp(1rem, 4.3vw, 4.2rem);
+      padding: clamp(1rem, 2.8vw, 2.6rem) var(--content-pad-inline);
     }
 
     .community-title {
@@ -386,6 +424,13 @@
 
     .community-list li:last-child {
       margin-bottom: 0;
+    }
+
+    #family-mentorship .family-callout {
+      margin: 1.2rem 0 0;
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
     }
 
     .contact-block {
@@ -515,7 +560,7 @@
 
     .intro-content {
       width: 100%;
-      padding-inline: clamp(1rem, 4vw, 5rem);
+      padding-inline: var(--content-pad-inline);
       margin: 0 auto;
     }
 
@@ -651,7 +696,7 @@
       }
 
       .community-text {
-        padding: 0.75rem 0 1.5rem;
+        padding: 0.75rem var(--content-pad-inline) 1.5rem;
         width: 100%;
         margin-inline: 0;
         align-items: flex-start;
@@ -769,7 +814,7 @@
       }
 
       .community-text {
-        padding: 0.75rem 0 1.5rem;
+        padding: 0.75rem var(--content-pad-inline) 1.5rem;
         width: 100%;
         margin-inline: 0;
       }
@@ -850,9 +895,6 @@
 
     <section id="prosecution" class="section-dark feature-section" aria-labelledby="prosecution-title">
       <div class="container community-grid">
-        <figure class="family-photo">
-          <img src="images/scott_prosecutor.jpg" width="2600" height="1730" alt="Scott Gardner prosecutor-era photo." loading="lazy" decoding="async" />
-        </figure>
         <div class="community-text">
           <h2 class="community-title" id="prosecution-title">As one of the state's top prosecutors:</h2>
           <ul class="community-list">
@@ -887,9 +929,6 @@
 
     <section id="faith-service" class="section-dark feature-section" aria-labelledby="faith-action-title">
       <div class="container community-grid">
-        <figure class="family-photo">
-          <img src="images/scott_faithInAction.jpg" width="2600" height="1730" alt="Scott Gardner faith in action photo." loading="lazy" decoding="async" />
-        </figure>
         <div class="community-text">
           <h2 class="community-title" id="faith-action-title">A Lifetime of Faith in Action.</h2>
           <ul class="community-list">
@@ -912,7 +951,8 @@
           <h2 class="community-title" id="faith-action-title-2">Family and Beyond.</h2>
           <p>Scott has been married to Reina for 38 years. She was a kindergarten teacher and Principal of the Early Childhood Campus at Christ Episcopal School. 
             She currently serves as the Executive Director of the 22nd Judicial District Court Bar Association. Reina is a Court Appointed Special Advocate and CASA of the Year. 
-            They have two sons; JD is a computer programmer, and Sean teaches high school physics.<br><br>They are certified foster parents.</p>
+            They have two sons; JD is a computer programmer, and Sean teaches high school physics.</p>
+          <p class="family-callout"><strong>They are certified foster parents.</strong></p>
         </div>
       </div>
     </section>
@@ -935,6 +975,7 @@
           treasure in St Tammany and Washington Parish.<br><br>
           <b>I am guided in this work by my faith. I ask for your support and your prayers as I continue this work
           as your Judge in Division G.</b></p>
+          <img class="about-signature" src="images/scott_signature.png" width="640" height="222" alt="Scott Gardner signature." loading="lazy" decoding="async" />
         </div>
         <figure class="portrait-wrap">
           <img src="images/scott_library.jpg" width="1151" height="1730" alt="Scott Gardner judicial portrait." loading="lazy" decoding="async" />
