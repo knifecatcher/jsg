@@ -219,7 +219,8 @@
         padding: 2rem 0 0;
       }
 
-      #about .container.about-grid {
+      #about .container.about-grid,
+      #bio .container.about-grid {
         grid-template-columns: minmax(560px, 1fr) minmax(320px, 560px);
         gap: clamp(0.8rem, 2vw, 2rem);
         align-items: stretch;
@@ -228,14 +229,16 @@
         margin: 0;
       }
 
-      #about .about-text {
+      #about .about-text,
+      #bio .about-text {
         padding: 1.5rem 2.2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
-      #about .portrait-wrap {
+      #about .portrait-wrap,
+      #bio .portrait-wrap {
         width: min(520px, 100%);
         max-width: 520px;
         height: auto;
@@ -249,7 +252,8 @@
         background: #d8d2c6;
       }
 
-      #about .portrait-wrap img {
+      #about .portrait-wrap img,
+      #bio .portrait-wrap img {
         height: 100%;
         object-fit: cover;
         object-position: center 16%;
@@ -288,12 +292,14 @@
         justify-self: center;
       }
 
-      #faith-service .community-text p {
+      #faith-service .community-text p,
+      #prosecution .community-text p {
         font-size: 1.05rem;
         line-height: 1.45;
       }
 
-      #faith-service .community-list {
+      #faith-service .community-list,
+      #prosecution .community-list {
         font-size: 1.05rem;
         line-height: 1.45;
       }
@@ -308,12 +314,14 @@
           linear-gradient(270deg, var(--section-bg) 0%, rgba(var(--section-bg-rgb), 0) 16%);
       }
 
-      #family-mentorship .community-grid {
+      #family-mentorship .community-grid,
+      #lifetime-of-service .community-grid {
         grid-template-columns: minmax(0, 1fr) minmax(320px, 705px);
         grid-template-areas: "text photo";
       }
 
-      #family-mentorship .community-text {
+      #family-mentorship .community-text,
+      #lifetime-of-service .community-text {
         grid-area: text;
         justify-self: stretch;
         width: 100%;
@@ -323,7 +331,8 @@
         align-items: flex-start;
       }
 
-      #family-mentorship .family-photo {
+      #family-mentorship .family-photo,
+      #lifetime-of-service .family-photo {
         grid-area: photo;
         justify-self: end;
         align-self: stretch;
@@ -334,15 +343,19 @@
       }
 
       #family-mentorship .community-title,
-      #family-mentorship .community-text p {
+      #family-mentorship .community-text p,
+      #lifetime-of-service .community-title,
+      #lifetime-of-service .community-text p {
         width: 100%;
       }
 
-      #family-mentorship .community-text p {
+      #family-mentorship .community-text p,
+      #lifetime-of-service .community-text p {
         max-width: none;
       }
 
-      #family-mentorship .family-photo img {
+      #family-mentorship .family-photo img,
+      #lifetime-of-service .family-photo img {
         height: 100%;
         object-fit: cover;
         object-position: center center;
@@ -465,7 +478,8 @@
     }
 
     @media (max-width: 1100px) {
-    #about .container {
+    #about .container,
+    #bio .container {
       width: min(900px, 100% - 1.5rem);
     }
 
@@ -637,11 +651,74 @@
       <div class="container intro-content">
         <h2 class="section-title" id="intro-title">38 years protecting our rights, our children and families, and our community.</h2>
         <ul class="intro-list">
-          <li>Judge Scott Gardner has dedicated his life to safeguarding our rights, our children and families, and our community.</li>
-          <li>For 25 years he was one of Louisiana's top prosecutors.</li>
-          <li>As a judge he leads innovative programs that strengthen families and protect victims.</li>
-          <li>He has been recognized as <b>Judge of the Year</b>.</li>
+          <li>Judge Scott Gardner has dedicated his life to safeguarding our rights, our children and families, and our community</li>
+          <li>For 25 years he was one of Louisiana's top prosecutors</li>
+          <li>As a judge he leads innovative programs that strengthen families and protect victims</li>
+          <li>He has been recognized as <b>Judge of the Year</b></li>
         </ul>
+      </div>
+    </section>
+
+    <section id="bio" class="section-cream" aria-labelledby="bio-title">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2 class="section-title" id="bio-title">Judge Scott Gardner, a lifetime of service to our children, our families, and our community.</h2>
+          <ul class="intro-list">
+            <li>He presides over criminal, civil, domestic violence, and children's dockets</li>
+            <li>He has personally handled over 500 jury trials</li>
+            <li>He is the CASA <b>Judge of the Year</b></li>
+            <li>He is a Children's Advocacy Center <b>Champion of Children</b></li>
+            <li>He is the recipient of the prestigious <b>Pearl Williams Leadership Award</b></li>
+            <li>He is the founder and chair of the <b>Family Justice Initiative</b></li>
+            <li>He built Louisiana's first <b>Children's Calming Room</b> in a courthouse in Louisiana</li>
+            <li>He implemented the <b>Best for Baby Program</b> matching families with treatment by the LSU Infant Team</li>
+            <li>He oversees two of Louisiana's <b>Family Preservation Courts</b>, matching struggling families with mental health treatment, drug testing and parenting classes</li>
+            <li>He is a graduate of the <b>Early Childhood Policy Leadership Institute</b></li>
+            <li>He is a member of the <b>U.S. Supreme Court Bar</b></li>
+            <li>He is a member of the <b>Louisiana District Judges Association</bb> and served on the Executive Board</li>
+            <li>He is a member of the <b>Louisiana Council of Juvenile Family Court Judges</b></li>
+          </ul>
+        </div>
+        <figure class="portrait-wrap">
+          <img src="images/scott_library.jpg" width="1151" height="1730" alt="Portrait of Scott Gardner." loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="prosecution" class="section-dark feature-section" aria-labelledby="prosecution-title">
+      <div class="container community-grid">
+        <figure class="family-photo">
+          <img src="images/scott_prosecutor.jpg" width="2600" height="1730" alt="Scott Gardner in choir." loading="lazy" decoding="async" />
+        </figure>
+        <div class="community-text">
+          <h2 class="community-title" id="prosecution-title">As one of the state's top prosecutors</h2>
+          <ul class="community-list">
+            <li>He prosecuted <b>400 jury trials</b></li>
+            <li>He was awarded the Metropolitan Crime Commission <b>Prosecutor of the Year</b></li>
+            <li>He was awarded the Louisiana Narcotics Officers Association <b>Prosecutor of the Year</b></li>
+            <li>He was twice named the Citizens and Victims Against Crime <b>Prosecutor of the Year</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="lifetime-of-service" class="section-dark feature-section" style="--section-bg: #141D3A; --section-bg-rgb: 20, 29, 58;" aria-labelledby="lifetime-of-service-title">
+      <div class="container community-grid">
+        <figure class="family-photo">
+          <img src="images/scott_group.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
+        </figure>
+        <div class="community-text">
+          <h2 class="community-title" id="lifetime-of-service-title">A Lifetime of Service to our Community</h2>
+          <ul class="community-list">
+            <li>Children’s Advocacy Center, Board of Directors</li>
+            <li>Habitat for Humanity, Board of Directors</li>
+            <li>Parenting Center at St. Tammany Hospital, Board of Directors</li>
+            <li>Safe Harbor Domestic Violence Shelter</li>
+            <li>Agenda for Children</li>
+            <li>Youth Service Bureau</li>
+            <li>National Guard Youth Challenge Program</li>
+            <li>Louisiana Foundation Against Sexual Assault</li>
+            <li>St. Tammany Seniors and Law Enforcement Council</li>
       </div>
     </section>
 
