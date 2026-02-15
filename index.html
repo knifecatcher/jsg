@@ -69,12 +69,17 @@
       object-position: center 22%;
     }
 
-    .hero-logo {
-      position: absolute;
-      top: 1.25rem;
-      left: 1.25rem;
-      z-index: 3;
-      width: clamp(210px, 27vw, 420px);
+    .hero-logo-bar {
+      background: var(--cream);
+      border-bottom: 1px solid #d6cebc;
+      padding: clamp(0.85rem, 2vw, 1.4rem) 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-bar img {
+      width: clamp(220px, 24vw, 430px);
       height: auto;
     }
 
@@ -320,7 +325,9 @@
       }
 
       #faith-service .community-title,
-      #prosecution .community-title {
+      #prosecution .community-title,
+      #lifetime-of-service .community-title,
+      #family-mentorship .community-title {
         font-size: clamp(2rem, 4vw, 3.6rem);
         width: 100%;
       }
@@ -758,11 +765,6 @@
 
       .hero-bg { object-position: 34% 18%; }
 
-      .hero-logo {
-        top: 0.75rem;
-        left: 0.75rem;
-      }
-
       .hero-content {
         padding: 0 1rem 1rem;
       }
@@ -841,9 +843,12 @@
 </head>
 <body>
   <main>
+    <section class="hero-logo-bar" aria-label="Campaign logo">
+      <img src="images/logo.png" alt="Judge Scott Gardner Division G logo." decoding="async" />
+    </section>
+
     <section class="hero" aria-labelledby="hero-lines">
       <img class="hero-bg" src="images/scott_hero_horizontal.jpg" width="2600" height="1730" alt="Scott Gardner hero banner photo." fetchpriority="high" decoding="async" />
-      <img class="hero-logo" src="images/logo.png" alt="Judge Scott Gardner Division G logo." decoding="async" />
       <div class="hero-content">
         <div></div>
         <div class="hero-right">
@@ -883,8 +888,8 @@
             <li>He oversees two of Louisiana's <b>Family Preservation Courts</b>, matching struggling families with mental health treatment, drug testing and parenting classes</li>
             <li>He is a graduate of the <b>Early Childhood Policy Leadership Institute</b></li>
             <li>He is a member of the <b>U.S. Supreme Court Bar</b></li>
-            <li>He is a member of the <b>Louisiana District Judges Association</bb> and served on the Executive Board</li>
-            <li>He is a member of the <b>Louisiana Council of Juvenile Family Court Judges</b></li>
+            <li>He is a member of the <b>Louisiana District Judges Association</b> and served on the <b>Executive Board</b></li>
+            <li>He is a member of the <b>Louisiana Council of Juvenile and Family Court Judges</b></li>
           </ul>
         </div>
         <figure class="portrait-wrap">
@@ -969,7 +974,7 @@
           homes. At five in the afternoon, I may sentence a drug dealer, a child molester, or a murderer. It is not
           work for the faint of heart. It is not work you do without vast experience.
           <br><br><b>It is not work that you leave at the office.</b><br><br>
-          I am proud of the innovative work we have done. Our family preservation court is a model for the rest
+          I am proud of the innovative work we have done. Our Family Preservation Court is a model for the rest
           of the state. Our Best for Baby program has saved children, and created better outcomes for their
           parents. My unmatched experience, over 500 jury trials, ensures the public safety that all of us
           treasure in St Tammany and Washington Parish.<br><br>
@@ -1060,6 +1065,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
