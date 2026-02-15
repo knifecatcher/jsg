@@ -77,24 +77,32 @@
       object-position: center 22%;
     }
 
+    .hero-logo {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 3;
+      width: clamp(210px, 27vw, 420px);
+      height: auto;
+    }
+
     .hero-content {
-      position: relative;
+      position: absolute;
+      inset: 0;
       z-index: 2;
-      width: min(var(--max), 100% - 3rem);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: end;
-      padding-top: 52px;
-      padding-bottom: 32px;
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 0 2rem 2rem;
       color: #fff;
     }
 
     .hero-right {
-      justify-self: end;
-      text-align: left;
-      max-width: min(620px, calc(100vw - 5rem));
-      padding-right: 1.25rem;
+      width: 75%;
+      margin-left: auto;
+      text-align: right;
     }
 
     .hero-lines {
@@ -432,11 +440,6 @@
         object-fit: contain;
       }
 
-      .hero-right {
-        justify-self: end;
-        margin-top: 0;
-      }
-
     }
 
     @media (max-width: 920px) {
@@ -460,22 +463,25 @@
     }
 
     @media (max-width: 800px) {
-      .container,
-      .hero-content { width: min(var(--max), 100% - 2rem); }
+      .container { width: min(var(--max), 100% - 2rem); }
 
       .hero { min-height: 432px; }
 
       .hero-bg { object-position: 34% 18%; }
 
-      .hero-content { padding-top: 44px; }
+      .hero-logo {
+        top: 0.75rem;
+        left: 0.75rem;
+      }
 
       .hero-content {
-        grid-template-columns: 1fr;
+        padding: 0 1rem 1rem;
       }
 
       .hero-right {
-        justify-self: center;
-        text-align: center;
+        width: 78%;
+        margin-left: auto;
+        text-align: right;
       }
 
       .hero-lines { font-size: clamp(1rem, 8vw, 3rem); }
@@ -544,6 +550,7 @@
   <main>
     <section class="hero" aria-labelledby="hero-lines">
       <img class="hero-bg" src="images/scott_hero_horizontal.jpg" width="2600" height="1730" alt="Scott Gardner with supporters outdoors." fetchpriority="high" decoding="async" />
+      <img class="hero-logo" src="images/logo.png" alt="Scott Gardner campaign logo." decoding="async" />
       <div class="hero-content">
         <div></div>
         <div class="hero-right">
