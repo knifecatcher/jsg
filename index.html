@@ -278,13 +278,22 @@
       #community-2 .family-photo {
         grid-area: photo;
         justify-self: end;
+        align-self: stretch;
         width: 100%;
         max-width: 705px;
+        height: 100%;
+        aspect-ratio: auto;
       }
 
       #community-2 .community-title,
       #community-2 .community-text p {
         width: 100%;
+      }
+
+      #community-2 .family-photo img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
       }
     }
 
