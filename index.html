@@ -128,8 +128,8 @@
 
     .about-text {
       grid-area: about-text;
-      max-width: 44rem;
-      padding-top: clamp(0.6rem, 1.6vw, 1.8rem);
+      max-width: none;
+      padding: clamp(1rem, 2.8vw, 2.6rem) clamp(1rem, 4.3vw, 4.2rem);
     }
 
     .about-text .section-title {
@@ -153,9 +153,9 @@
     }
 
     .about-text p {
-      max-width: 48ch;
-      line-height: 1.4;
-      margin-bottom: 1.2rem;
+      max-width: none;
+      line-height: 1.45;
+      margin-bottom: 1rem;
     }
 
     .portrait-wrap {
@@ -215,6 +215,46 @@
         padding: 0;
       }
 
+      #about.section-cream {
+        padding: 2rem 0 0;
+      }
+
+      #about .container.about-grid {
+        grid-template-columns: minmax(560px, 1fr) minmax(320px, 560px);
+        gap: clamp(0.8rem, 2vw, 2rem);
+        align-items: stretch;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+
+      #about .about-text {
+        padding: 1.5rem 2.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #about .portrait-wrap {
+        width: min(520px, 100%);
+        max-width: 520px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        justify-self: end;
+        align-self: start;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        box-shadow: 0 16px 48px rgba(9, 20, 32, 0.22);
+        background: #d8d2c6;
+      }
+
+      #about .portrait-wrap img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center 16%;
+      }
+
       .feature-section .community-grid {
         grid-template-columns: 705px minmax(560px, 1fr);
         gap: clamp(0.8rem, 2vw, 2rem);
@@ -248,12 +288,12 @@
         justify-self: center;
       }
 
-      #community .community-text p {
+      #faith-service .community-text p {
         font-size: 1.05rem;
         line-height: 1.45;
       }
 
-      #community .community-list {
+      #faith-service .community-list {
         font-size: 1.05rem;
         line-height: 1.45;
       }
@@ -268,12 +308,12 @@
           linear-gradient(270deg, var(--section-bg) 0%, rgba(var(--section-bg-rgb), 0) 16%);
       }
 
-      #community-2 .community-grid {
+      #family-mentorship .community-grid {
         grid-template-columns: minmax(0, 1fr) minmax(320px, 705px);
         grid-template-areas: "text photo";
       }
 
-      #community-2 .community-text {
+      #family-mentorship .community-text {
         grid-area: text;
         justify-self: stretch;
         width: 100%;
@@ -283,7 +323,7 @@
         align-items: flex-start;
       }
 
-      #community-2 .family-photo {
+      #family-mentorship .family-photo {
         grid-area: photo;
         justify-self: end;
         align-self: stretch;
@@ -293,16 +333,16 @@
         aspect-ratio: auto;
       }
 
-      #community-2 .community-title,
-      #community-2 .community-text p {
+      #family-mentorship .community-title,
+      #family-mentorship .community-text p {
         width: 100%;
       }
 
-      #community-2 .community-text p {
+      #family-mentorship .community-text p {
         max-width: none;
       }
 
-      #community-2 .family-photo img {
+      #family-mentorship .family-photo img {
         height: 100%;
         object-fit: cover;
         object-position: center center;
@@ -355,6 +395,36 @@
       max-width: 700px;
     }
 
+    #contact .container {
+      width: min(960px, 100% - 3rem);
+      margin-inline: auto;
+    }
+
+    .intro-content {
+      width: 100%;
+      padding-inline: clamp(1rem, 4vw, 5rem);
+      margin: 0 auto;
+    }
+
+    .intro-content .section-title {
+      text-transform: none;
+    }
+
+    .intro-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #4f6378;
+    }
+
+    .intro-list li {
+      margin-bottom: 0.7rem;
+      font: 500 clamp(1.05rem, 1.4vw, 1.75rem)/1.45 Arial, sans-serif;
+    }
+
+    .intro-list li:last-child {
+      margin-bottom: 0;
+    }
+
     .contact-link {
       font: 700 0.95rem/1 Arial, sans-serif;
       letter-spacing: 0.08em;
@@ -395,6 +465,10 @@
     }
 
     @media (max-width: 1100px) {
+    #about .container {
+      width: min(900px, 100% - 1.5rem);
+    }
+
       .community-grid {
         grid-template-columns: 1fr;
         width: min(900px, 100% - 1.5rem);
@@ -454,7 +528,7 @@
       }
 
       .about-text p {
-        max-width: 40ch;
+        max-width: none;
       }
 
       .portrait-wrap {
@@ -491,7 +565,7 @@
 
     @media (max-width: 620px) {
       #about.section-cream {
-        padding-top: 1.4rem;
+        padding-top: 2rem;
         padding-bottom: 2.4rem;
       }
 
@@ -509,8 +583,8 @@
 
       .about-text {
         padding-top: 0;
-        width: min(100%, 460px);
-        margin: 0 auto;
+        width: 100%;
+        margin: 0;
         text-align: left;
       }
 
@@ -559,10 +633,51 @@
       </div>
     </section>
 
+    <section id="intro" class="section-cream" aria-labelledby="intro-title">
+      <div class="container intro-content">
+        <h2 class="section-title" id="intro-title">38 years protecting our rights, our children and families, and our community.</h2>
+        <ul class="intro-list">
+          <li>Judge Scott Gardner has dedicated his life to safeguarding our rights, our children and families, and our community.</li>
+          <li>For 25 years he was one of Louisiana's top prosecutors.</li>
+          <li>As a judge he leads innovative programs that strengthen families and protect victims.</li>
+          <li>He has been recognized as <b>Judge of the Year</b>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faith-service" class="section-dark feature-section" aria-labelledby="faith-action-title">
+      <div class="container community-grid">
+        <figure class="family-photo">
+          <img src="images/scott_faithInAction.jpg" width="2600" height="1730" alt="Scott Gardner in choir." loading="lazy" decoding="async" />
+        </figure>
+        <div class="community-text">
+          <h2 class="community-title" id="faith-action-title">A Lifetime of Faith in Action.</h2>
+          <ul class="community-list">
+            <li>Service to community is central to his life and he is committed to strengthening the quality of life on the Northshore.</li>
+            <li>Scott and his family are active members of Christ Episcopal Church.</li>
+            <li>He led children's and youth ministries.</li>
+            <li>He has been a faculty member of the Christ Episcopal Enrichment Program.</li>
+            <li>He was a Children's Choir director and Community Choir member.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="family-mentorship" class="section-dark feature-section" style="--section-bg: #141D3A; --section-bg-rgb: 20, 29, 58;" aria-labelledby="faith-action-title-2">
+      <div class="container community-grid">
+        <figure class="family-photo">
+          <img src="images/scott_family.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
+        </figure>
+        <div class="community-text">
+          <h2 class="community-title" id="faith-action-title-2">Family and Beyond.</h2>
+          <p>Scott has been married to Reina for 38 years. She was a kindergarten teacher and Principal of the Early Childhood Campus at Christ Episcopal School. She currently serves as the Executive Director of the 22nd Judicial District Court Bar Association. Reina is a Court Appointed Special Advocate and CASA of the Year. They have two sons; JD works in Silicon Valley, and Sean teaches high school physics.<br><br>They are certified foster parents.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section-cream" aria-labelledby="about-title">
       <div class="container about-grid">
         <div class="about-text">
-          <h2 class="section-title" id="about-title">Scott Gardner</h2>
           <p>Serving as a judge is the honor of a lifetime.<br><br>
           Each day I start well before the sun comes up with a prayer for wisdom. A judge has to discern
           between a violent predator, and someone who is simply struggling with poverty or mental health
@@ -585,36 +700,6 @@
       </div>
     </section>
 
-    <section id="community" class="section-dark feature-section" aria-labelledby="faith-action-title">
-      <div class="container community-grid">
-        <figure class="family-photo">
-          <img src="images/scott_faithInAction.jpg" width="2600" height="1730" alt="Scott Gardner in choir." loading="lazy" decoding="async" />
-        </figure>
-        <div class="community-text">
-          <h2 class="community-title" id="faith-action-title">A Lifetime of Faith in Action.</h2>
-          <ul class="community-list">
-            <li>Service to community is central to his life and he is committed to strengthening the quality of life on the Northshore.</li>
-            <li>Scott and his family are active members of Christ Episcopal Church.</li>
-            <li>He led children's and youth ministries.</li>
-            <li>He has been a faculty member of the Christ Episcopal Enrichment Program.</li>
-            <li>He was a Children's Choir director and Community Choir member.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="community-2" class="section-dark feature-section" style="--section-bg: #141D3A; --section-bg-rgb: 20, 29, 58;" aria-labelledby="faith-action-title-2">
-      <div class="container community-grid">
-        <figure class="family-photo">
-          <img src="images/scott_family.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
-        </figure>
-        <div class="community-text">
-          <h2 class="community-title" id="faith-action-title-2">Family and Beyond.</h2>
-          <p>Scott has been married to Reina for 38 years. She was a kindergarten teacher and Principal of the Early Childhood Campus at Christ Episcopal School. She currently serves as the Executive Director of the 22nd Judicial District Court Bar Association. Reina is a Court Appointed Special Advocate and CASA of the Year. They have two sons; JD works in Silicon Valley, and Sean teaches high school physics.<br><br>They are certified foster parents.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="contact" class="section-cream" aria-labelledby="contact-title">
       <div class="container">
         <h2 class="section-title" id="contact-title">Get in touch with Scott</h2>
@@ -634,3 +719,4 @@
   </main>
 </body>
 </html>
+
