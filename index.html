@@ -518,6 +518,10 @@
       padding-top: clamp(1rem, 2.5vw, 2rem);
     }
 
+    #intro.section-cream {
+      padding-top: 0;
+    }
+
     .intro-content {
       width: 100%;
       padding-inline: clamp(1rem, 4vw, 5rem);
@@ -547,6 +551,59 @@
       font: 700 0.95rem/1 Arial, sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .donate-wrap {
+      margin: 0 0 1rem;
+    }
+
+    .intro-donate-wrap {
+      min-height: clamp(84px, 10.5vw, 132px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .donate-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.82rem 1.4rem;
+      border-radius: 999px;
+      border: 2px solid #7e1212;
+      background: linear-gradient(135deg, #c82828 0%, #8f1616 100%);
+      color: #fff;
+      font: 800 0.92rem/1 Arial, sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(122, 18, 18, 0.28);
+      transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+    }
+
+    .donate-button-intro {
+      min-height: 62px;
+      padding: 1rem 3.45rem;
+      font-size: clamp(0.98rem, 1.3vw, 1.15rem);
+      letter-spacing: 0.12em;
+      box-shadow: 0 12px 26px rgba(122, 18, 18, 0.3);
+    }
+
+    .donate-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(122, 18, 18, 0.35);
+      filter: brightness(1.06);
+    }
+
+    .donate-button:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 14px rgba(122, 18, 18, 0.28);
+    }
+
+    .donate-button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
     }
 
     .contact-item {
@@ -735,6 +792,10 @@
         width: 100%;
         margin-inline: 0;
       }
+
+      .intro-donate-wrap {
+        min-height: clamp(78px, 18vw, 114px);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -745,8 +806,8 @@
 <body>
   <main>
     <section class="hero" aria-labelledby="hero-lines">
-      <img class="hero-bg" src="images/scott_hero_horizontal.jpg" width="2600" height="1730" alt="Scott Gardner with supporters outdoors." fetchpriority="high" decoding="async" />
-      <img class="hero-logo" src="images/logo.png" alt="Scott Gardner campaign logo." decoding="async" />
+      <img class="hero-bg" src="images/scott_hero_horizontal.jpg" width="2600" height="1730" alt="Scott Gardner hero banner photo." fetchpriority="high" decoding="async" />
+      <img class="hero-logo" src="images/logo.png" alt="Judge Scott Gardner Division G logo." decoding="async" />
       <div class="hero-content">
         <div></div>
         <div class="hero-right">
@@ -757,6 +818,9 @@
 
     <section id="intro" class="section-cream" aria-labelledby="intro-title">
       <div class="container intro-content">
+        <div class="donate-wrap intro-donate-wrap">
+          <a class="donate-button donate-button-intro" href="#" aria-label="Donate">Donate</a>
+        </div>
         <h2 class="section-title" id="intro-title">38 years protecting our rights, our children and families, and our community.</h2>
         <ul class="intro-list">
           <li>Judge Scott Gardner has dedicated his life to safeguarding our rights, our children and families, and our community</li>
@@ -788,7 +852,7 @@
           </ul>
         </div>
         <figure class="portrait-wrap">
-          <img src="images/scott_library.jpg" width="1151" height="1730" alt="Portrait of Scott Gardner." loading="lazy" decoding="async" />
+          <img src="images/scott_library.jpg" width="1151" height="1730" alt="Scott Gardner library portrait." loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -796,10 +860,10 @@
     <section id="prosecution" class="section-dark feature-section" aria-labelledby="prosecution-title">
       <div class="container community-grid">
         <figure class="family-photo">
-          <img src="images/scott_prosecutor.jpg" width="2600" height="1730" alt="Scott Gardner in choir." loading="lazy" decoding="async" />
+          <img src="images/scott_prosecutor.jpg" width="2600" height="1730" alt="Scott Gardner prosecutor-era photo." loading="lazy" decoding="async" />
         </figure>
         <div class="community-text">
-          <h2 class="community-title" id="prosecution-title">As one of the state's top prosecutors</h2>
+          <h2 class="community-title" id="prosecution-title">As one of the state's top prosecutors:</h2>
           <ul class="community-list">
             <li>He prosecuted <b>400 jury trials</b></li>
             <li>He was awarded the Metropolitan Crime Commission <b>Prosecutor of the Year</b></li>
@@ -813,10 +877,10 @@
     <section id="lifetime-of-service" class="section-dark feature-section" style="--section-bg: #141D3A; --section-bg-rgb: 20, 29, 58;" aria-labelledby="lifetime-of-service-title">
       <div class="container community-grid">
         <figure class="family-photo">
-          <img src="images/scott_group.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
+          <img src="images/scott_group.jpg" width="2600" height="1730" alt="Scott Gardner with community group." loading="lazy" decoding="async" />
         </figure>
         <div class="community-text">
-          <h2 class="community-title" id="lifetime-of-service-title">A Lifetime of Service to our Community</h2>
+          <h2 class="community-title" id="lifetime-of-service-title">A Lifetime of Service to our Community.</h2>
           <ul class="community-list">
             <li>Children’s Advocacy Center, Board of Directors</li>
             <li>Habitat for Humanity, Board of Directors</li>
@@ -833,16 +897,16 @@
     <section id="faith-service" class="section-dark feature-section" aria-labelledby="faith-action-title">
       <div class="container community-grid">
         <figure class="family-photo">
-          <img src="images/scott_faithInAction.jpg" width="2600" height="1730" alt="Scott Gardner in choir." loading="lazy" decoding="async" />
+          <img src="images/scott_faithInAction.jpg" width="2600" height="1730" alt="Scott Gardner faith in action photo." loading="lazy" decoding="async" />
         </figure>
         <div class="community-text">
           <h2 class="community-title" id="faith-action-title">A Lifetime of Faith in Action.</h2>
           <ul class="community-list">
-            <li>Service to community is central to his life and he is committed to strengthening the quality of life on the Northshore.</li>
-            <li>Scott and his family are active members of Christ Episcopal Church.</li>
-            <li>He led children's and youth ministries.</li>
-            <li>He has been a faculty member of the Christ Episcopal Enrichment Program.</li>
-            <li>He was a Children's Choir director and Community Choir member.</li>
+            <li>Service to community is central to his life and he is committed to strengthening the quality of life on the Northshore</li>
+            <li>Scott and his family are active members of Christ Episcopal Church</li>
+            <li>He led children's and youth ministries</li>
+            <li>He has been a faculty member of the Christ Episcopal Enrichment Program</li>
+            <li>He was a Children's Choir director and Community Choir member</li>
           </ul>
         </div>
       </div>
@@ -851,7 +915,7 @@
     <section id="family-mentorship" class="section-dark feature-section" style="--section-bg: #141D3A; --section-bg-rgb: 20, 29, 58;" aria-labelledby="faith-action-title-2">
       <div class="container community-grid">
         <figure class="family-photo">
-          <img src="images/scott_family.jpg" width="2600" height="1730" alt="Scott Gardner with family." loading="lazy" decoding="async" />
+          <img src="images/scott_family.jpg" width="2600" height="1730" alt="Scott Gardner family photo." loading="lazy" decoding="async" />
         </figure>
         <div class="community-text">
           <h2 class="community-title" id="faith-action-title-2">Family and Beyond.</h2>
@@ -880,7 +944,7 @@
           as your Judge in Division G.</p>
         </div>
         <figure class="portrait-wrap">
-          <img src="images/scott_judge.jpg" width="1151" height="1730" alt="Portrait of Scott Gardner." loading="lazy" decoding="async" />
+          <img src="images/scott_judge.jpg" width="1151" height="1730" alt="Scott Gardner judicial portrait." loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -904,6 +968,9 @@
         </div>
 
         <div class="contact-links">
+          <div class="donate-wrap">
+            <a class="donate-button donate-button-intro" href="#" aria-label="Donate">Donate</a>
+          </div>
           <a class="contact-item" href="https://www.facebook.com/profile.php?id=61587949359590" aria-label="Find us on Facebook" target="_blank" rel="noopener noreferrer">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.4 8H16V5.2C15.72 5.16 14.75 5.08 13.62 5.08C11.25 5.08 9.62 6.53 9.62 9.2V11.67H7V14.8H9.62V22H12.8V14.8H15.3L15.7 11.67H12.8V9.5C12.8 8.6 13.04 8 14.4 8Z"/></svg>
             <span>Find us on Facebook</span>
