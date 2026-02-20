@@ -105,7 +105,7 @@
     .hero-lines {
       margin: 0;
       text-transform: uppercase;
-      font: 900 clamp(1rem, 4vw, 5rem)/0.95 "Arial Black", Impact, sans-serif;
+      font: 900 clamp(2rem, 8vw, 10rem)/0.95 "Arial Black", Impact, sans-serif;
       letter-spacing: 0.01em;
       text-shadow: 0 6px 26px rgba(0, 0, 0, 0.26);
     }
@@ -531,6 +531,119 @@
       color: #8e1f1f;
     }
 
+    .support-wrap {
+      width: min(960px, 100%);
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .support-logo {
+      width: clamp(220px, 28vw, 430px);
+      height: auto;
+    }
+
+    .support-subtitle {
+      margin: -0.45rem 0 0;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font: 800 clamp(1rem, 2.2vw, 1.4rem)/1.1 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .support-copy {
+      width: min(700px, 100%);
+      color: #4f6378;
+      font: 500 1.2rem/1.5 Arial, sans-serif;
+    }
+
+    .support-copy p {
+      margin: 0 0 1rem;
+    }
+
+    .support-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .support-card {
+      width: min(700px, 100%);
+      max-width: 700px;
+      margin-top: 0.5rem;
+    }
+
+    .support-form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .support-attestation {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.65rem;
+      align-items: start;
+      font: 500 1.06rem/1.4 Arial, sans-serif;
+      color: var(--text-dark);
+      margin-top: 0.2rem;
+    }
+
+    .support-attestation input {
+      margin-top: 0.14rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--navy);
+    }
+
+    .support-attestation input:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .support-paper {
+      width: min(700px, 100%);
+      display: grid;
+      justify-items: center;
+      gap: 0.45rem;
+      margin-top: 0.3rem;
+      text-align: center;
+    }
+
+    #declaration-support .section-title {
+      text-align: center;
+    }
+
+    .support-paper-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 3px;
+      background: var(--navy);
+      color: #fff;
+      font: 700 1.05rem/1 Arial, sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.8rem 1rem;
+    }
+
+    .support-paper-link:hover {
+      background: #174766;
+    }
+
+    .support-paper-link:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .support-paper-subhead {
+      margin: 0;
+      color: #4f6378;
+      font: 500 1.05rem/1.45 Arial, sans-serif;
+    }
+
     .contact-hp {
       position: absolute;
       left: -9999px;
@@ -601,7 +714,7 @@
     }
 
     .intro-donate-wrap {
-      min-height: clamp(84px, 10.5vw, 132px);
+      min-height: clamp(126px, 15.75vw, 198px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -626,11 +739,17 @@
     }
 
     .donate-button-intro {
-      min-height: 62px;
-      padding: 1rem 3.45rem;
-      font-size: clamp(0.98rem, 1.3vw, 1.15rem);
+      min-height: 93px;
+      padding: 1.5rem 5.2rem;
+      font-size: clamp(1.47rem, 1.95vw, 1.73rem);
       letter-spacing: 0.12em;
       box-shadow: 0 12px 26px rgba(122, 18, 18, 0.3);
+    }
+
+    .donate-button-bottom {
+      min-width: 180px;
+      text-align: center;
+      justify-content: center;
     }
 
     .donate-button:hover {
@@ -778,6 +897,7 @@
       .hero-lines { font-size: clamp(1rem, 8vw, 3rem); }
 
       .section-title { font-size: clamp(1.8rem, 10vw, 3.2rem); }
+
     }
 
     @media (max-width: 620px) {
@@ -832,7 +952,7 @@
       }
 
       .intro-donate-wrap {
-        min-height: clamp(78px, 18vw, 114px);
+        min-height: clamp(117px, 27vw, 171px);
       }
     }
 
@@ -852,7 +972,7 @@
       <div class="hero-content">
         <div></div>
         <div class="hero-right">
-          <h1 class="hero-lines" id="hero-lines">Protecting our rights, our children and families, and our community.</h1>
+          <h1 class="hero-lines" id="hero-lines">Trusted.<br>Proven.<br>Fair.</h1>
         </div>
       </div>
     </section>
@@ -988,12 +1108,87 @@
       </div>
     </section>
 
+    <section id="declaration-support" class="section-cream" aria-labelledby="declaration-support-title">
+      <div class="container support-wrap">
+        <img class="support-logo" src="images/logo.png" alt="Judge Scott Gardner Division G logo." loading="lazy" decoding="async" />
+        <h2 class="section-title" id="declaration-support-title">Declaration of Support</h2>
+        <p class="support-subtitle">22<sup>nd</sup> Judicial District Court</p>
+
+        <div class="support-copy">
+          <p>
+            I hereby certify and declare that I support and endorse Scott Gardner in his campaign for
+            22<sup>nd</sup> Judicial District Court Judge, Division G.
+          </p>
+          <p>
+            I approve and permit the publishing and disclosure of my support and endorsement of his candidacy.
+          </p>
+          <p>
+            I expressly authorize Scott Gardner and/or his campaign committee to use my name and/or likeness in
+            any newspaper, radio, television, direct mail, internet, and/or any other advertising medium or
+            promotion indicating my support for his campaign for 22<sup>nd</sup> Judicial District Court Judge,
+            Division G.
+          </p>
+        </div>
+
+        <div class="contact-block support-card">
+          <form
+            class="support-form ajax-form"
+            action="https://formspree.io/f/xpqjjdyj"
+            method="POST"
+            data-success-message="We are so grateful for your commitment to our campaign."
+            data-error-message="Sorry, there was a problem submitting your declaration. Please try again."
+          >
+            <label class="contact-label" for="support-name">Full name</label>
+            <input class="contact-input" id="support-name" type="text" name="name" autocomplete="name" required />
+
+            <label class="contact-label" for="support-date">Date</label>
+            <input class="contact-input" id="support-date" type="date" name="support_date" required />
+
+            <label class="contact-label" for="support-phone">Phone number</label>
+            <input class="contact-input" id="support-phone" type="tel" name="phone" autocomplete="tel" required />
+
+            <label class="contact-label" for="support-email">Email address</label>
+            <input class="contact-input" id="support-email" type="email" name="email" autocomplete="email" required />
+
+            <label class="contact-label" for="support-mailing-address">Mailing address</label>
+            <textarea class="contact-textarea" id="support-mailing-address" name="mailing_address" autocomplete="street-address" required></textarea>
+
+            <label class="support-attestation" for="support-attestation">
+              <input id="support-attestation" type="checkbox" name="attestation" value="I declare and endorse this support statement as true." required />
+              <span>I attest that this declaration is true and I authorize publication and use of my support and endorsement as stated above.</span>
+            </label>
+
+            <input class="contact-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            <button class="contact-submit" type="submit">Submit Declaration</button>
+            <p class="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="support-paper">
+          <a
+            class="support-paper-link"
+            href="/assets/JudgeScottGardner_DeclarationOfSupport.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open printable declaration PDF in a new tab"
+          >Prefer to sign on paper?</a>
+          <p class="support-paper-subhead">Download the printable declaration (PDF) to print, sign, and mail.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section-cream" aria-labelledby="contact-title">
       <div class="container">
         <h2 class="section-title" id="contact-title">Get in touch with Scott</h2>
         <p style="font:500 1.375rem/1.5 Arial, sans-serif; color:#4f6378; margin:0;">Send a message and our team will follow up as soon as possible.</p>
         <div class="contact-block">
-          <form class="contact-form" action="https://formspree.io/f/meelgdvb" method="POST">
+          <form
+            class="contact-form ajax-form"
+            action="https://formspree.io/f/meelgdvb"
+            method="POST"
+            data-success-message="Thanks! Your message has been sent to Scott."
+            data-error-message="Sorry, there was a problem sending your message. Please try again."
+          >
             <label class="contact-label" for="contact-email">Your email</label>
             <input class="contact-input" id="contact-email" type="email" name="email" autocomplete="email" required />
 
@@ -1008,7 +1203,7 @@
 
         <div class="contact-links">
           <div class="donate-wrap">
-            <a class="donate-button donate-button-intro" href="#" aria-label="Donate">Donate</a>
+            <a class="donate-button donate-button-bottom" href="#" aria-label="Donate">Donate</a>
           </div>
           <a class="contact-item" href="https://www.facebook.com/judgescottgardner" aria-label="Find us on Facebook" target="_blank" rel="noopener noreferrer">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.4 8H16V5.2C15.72 5.16 14.75 5.08 13.62 5.08C11.25 5.08 9.62 6.53 9.62 9.2V11.67H7V14.8H9.62V22H12.8V14.8H15.3L15.7 11.67H12.8V9.5C12.8 8.6 13.04 8 14.4 8Z"/></svg>
@@ -1024,42 +1219,47 @@
   </main>
   <script>
     (function () {
-      var form = document.querySelector(".contact-form");
-      if (!form) return;
+      var forms = document.querySelectorAll(".ajax-form");
+      if (!forms.length) return;
 
-      var status = form.querySelector(".contact-status");
-      var submitButton = form.querySelector(".contact-submit");
-
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
+      forms.forEach(function (form) {
+        var status = form.querySelector(".contact-status");
+        var submitButton = form.querySelector("button[type='submit']");
         if (!submitButton || !status) return;
 
-        submitButton.disabled = true;
-        status.className = "contact-status";
-        status.textContent = "Sending...";
+        var successMessage = form.getAttribute("data-success-message") || "Thanks! Your form has been submitted.";
+        var errorMessage = form.getAttribute("data-error-message") || "Sorry, there was a problem submitting your form. Please try again.";
 
-        try {
-          var response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: {
-              Accept: "application/json"
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          submitButton.disabled = true;
+          status.className = "contact-status";
+          status.textContent = "Sending...";
+
+          try {
+            var response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json"
+              }
+            });
+
+            if (!response.ok) {
+              throw new Error("Submission failed");
             }
-          });
 
-          if (!response.ok) {
-            throw new Error("Submission failed");
+            form.reset();
+            status.className = "contact-status success";
+            status.textContent = successMessage;
+          } catch (error) {
+            status.className = "contact-status error";
+            status.textContent = errorMessage;
+          } finally {
+            submitButton.disabled = false;
           }
-
-          form.reset();
-          status.className = "contact-status success";
-          status.textContent = "Thanks! Your message has been sent to Scott.";
-        } catch (error) {
-          status.className = "contact-status error";
-          status.textContent = "Sorry, there was a problem sending your message. Please try again.";
-        } finally {
-          submitButton.disabled = false;
-        }
+        });
       });
     })();
   </script>
