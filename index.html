@@ -123,6 +123,13 @@
       text-shadow: 0 6px 26px rgba(0, 0, 0, 0.26);
     }
 
+    .hero-donate-wrap {
+      position: absolute;
+      top: clamp(0.8rem, 2vw, 1.5rem);
+      left: clamp(0.8rem, 2vw, 1.5rem);
+      z-index: 3;
+    }
+
     .section-cream {
       background: var(--cream);
       padding: clamp(3rem, 8vw, 6rem) 0;
@@ -552,6 +559,15 @@
       color: #8e1f1f;
     }
 
+    .site-disclaimer {
+      margin: 0;
+      padding: 1rem var(--content-pad-inline) 1.4rem;
+      text-align: center;
+      font: 500 0.82rem/1.4 Arial, sans-serif;
+      color: #6d7b8a;
+      background: var(--cream);
+    }
+
     .support-wrap {
       width: min(960px, 100%);
       margin-inline: auto;
@@ -735,6 +751,10 @@
       margin: 0 0 1rem;
     }
 
+    .donate-wrap-bio {
+      margin-top: 1.5rem;
+    }
+
     .intro-donate-wrap {
       min-height: clamp(126px, 15.75vw, 198px);
       display: flex;
@@ -769,9 +789,25 @@
     }
 
     .donate-button-bottom {
+      text-align: center;
+      justify-content: center;
+    }
+
+    .donate-button-hero {
       min-width: 180px;
       text-align: center;
       justify-content: center;
+    }
+
+    @media (min-width: 621px) {
+      .donate-button,
+      .donate-button-bottom,
+      .donate-button-hero {
+        min-width: calc(180px * 1.5);
+        min-height: calc(48px * 1.5);
+        padding: calc(0.82rem * 1.5) calc(1.4rem * 1.5);
+        font-size: calc(0.92rem * 1.5);
+      }
     }
 
     .donate-button:hover {
@@ -987,6 +1023,15 @@
       .intro-donate-wrap {
         min-height: clamp(117px, 27vw, 171px);
       }
+
+      .donate-button,
+      .donate-button-bottom,
+      .donate-button-hero {
+        min-width: 180px;
+        min-height: 48px;
+        padding: 0.82rem 1.4rem;
+        font-size: 0.92rem;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1002,6 +1047,9 @@
 
     <section class="hero" aria-labelledby="hero-lines">
       <img class="hero-bg" src="images/scott_hero_horizontal.jpg" width="2600" height="1730" alt="Scott Gardner hero banner photo." fetchpriority="high" decoding="async" />
+      <div class="hero-donate-wrap">
+        <a class="donate-button donate-button-hero" href="https://secure.anedot.com/judge-scott-gardner/f0b365f5-b89b-423f-aa05-98a161f66040" aria-label="Donate" target="_blank" rel="noopener noreferrer">Donate</a>
+      </div>
       <div class="hero-content">
         <div></div>
         <div class="hero-right">
@@ -1041,6 +1089,9 @@
             <li>He is a member of the <b>Louisiana District Judges Association</b> and served on the <b>Executive Board</b></li>
             <li>He is a member of the <b>Louisiana Council of Juvenile and Family Court Judges</b></li>
           </ul>
+          <div class="donate-wrap donate-wrap-bio">
+            <a class="donate-button" href="https://secure.anedot.com/judge-scott-gardner/f0b365f5-b89b-423f-aa05-98a161f66040" aria-label="Donate" target="_blank" rel="noopener noreferrer">Donate</a>
+          </div>
         </div>
         <figure class="portrait-wrap">
           <img src="images/scott_judge.jpg" width="1151" height="1730" alt="Scott Gardner library portrait." loading="lazy" decoding="async" />
@@ -1233,7 +1284,7 @@
 
         <div class="contact-links">
           <div class="donate-wrap">
-            <!-- <a class="donate-button donate-button-bottom" href="#" aria-label="Donate">Donate</a> -->
+            <a class="donate-button donate-button-bottom" href="https://secure.anedot.com/judge-scott-gardner/f0b365f5-b89b-423f-aa05-98a161f66040" aria-label="Donate" target="_blank" rel="noopener noreferrer">Donate</a>
           </div>
           <a class="contact-item" href="https://www.facebook.com/judgescottgardner" aria-label="Find us on Facebook" target="_blank" rel="noopener noreferrer">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.4 8H16V5.2C15.72 5.16 14.75 5.08 13.62 5.08C11.25 5.08 9.62 6.53 9.62 9.2V11.67H7V14.8H9.62V22H12.8V14.8H15.3L15.7 11.67H12.8V9.5C12.8 8.6 13.04 8 14.4 8Z"/></svg>
@@ -1247,6 +1298,7 @@
       </div>
     </section>
   </main>
+  <p class="site-disclaimer">Paid for by the Committee To Elect Judge Scott Gardner</p>
   <script>
     (function () {
       var forms = document.querySelectorAll(".ajax-form");
